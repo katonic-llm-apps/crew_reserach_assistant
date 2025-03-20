@@ -23,7 +23,7 @@ class EXAAnswerTool(BaseTool):
         headers = {
             "accept": "application/json",
             "content-type": "application/json",
-            "x-api-key": st.secrets["EXA_API_KEY"]
+            "x-api-key": os.environ.get("EXA_API_KEY") #st.secrets["EXA_API_KEY"]
         }
         
         try:
@@ -76,7 +76,7 @@ def create_researcher(selection):
     
     if provider == "GROQ":
         llm = LLM(
-            api_key=st.secrets["GROQ_API_KEY"],
+            api_key=os.environ.get("GROQ_API_KEY"), #st.secrets["GROQ_API_KEY"],
             model=f"groq/{model}"
         )
     elif provider == "Ollama":
@@ -100,7 +100,7 @@ def create_researcher(selection):
         if not model:
             model = "o1"
         llm = LLM(
-            api_key=st.secrets["OPENAI_API_KEY"],
+            api_key=os.environ.get("OPENAI_API_KEY"), #st.secrets["OPENAI_API_KEY"],
             model=f"openai/{model}"
         )
     
