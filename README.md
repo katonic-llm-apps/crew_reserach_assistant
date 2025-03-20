@@ -71,26 +71,20 @@ crewai-streamlit-demo/
 
 ## 🚀 Getting Started
 
-1. Clone the repository:
-```bash
-git clone https://github.com/tonykipkemboi/crewai-streamlit-demo.git
-cd crewai-streamlit-demo
-```
-
-2. Create and activate a virtual environment:
+1. Create and activate a virtual environment:
 ```bash
 python -m venv .venv
 source .venv/bin/activate  # On Windows, use `.venv\Scripts\activate`
 ```
 
-3. Install dependencies:
+2. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Run the application:
+3. Run the application:
 ```bash
-streamlit run streamlit_app.py
+streamlit run app.py --server.port=8050 --server.address=0.0.0.0
 ```
 
 ## 🔑 API Keys Setup
